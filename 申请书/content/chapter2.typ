@@ -79,3 +79,17 @@ func ParallelMergeSort(ctx context.Context, array []int, enableProfile bool) {
 
 
 #align(center, figure(caption: [#text("demo 监控图")])[#image("../figures/监控图.png", height: 43%)])
+
+#box(
+"       另外，我还做了负载测试。"
+)
+
+
+测试说明：以并行筛法求解 2~10000 素数为例，N 倍负载代表同时启动 N 个这样的任务（这 N 个任务将被打上同一个标签）。在测试中，将同时启动 20 倍负载和 200 倍负载，并分别统计总 CPU 用量，测试结果如下：
+
+#align(center, figure(caption: [#text("demo 负载测试图")])[#image("../figures/负载测试.png", height: 25%)])
+
+
+#box(
+"       可以看到：200 倍负载的 CPU 占用量几乎是 20 倍负载的 CPU 占用量的 10倍，符合预期。"
+)
