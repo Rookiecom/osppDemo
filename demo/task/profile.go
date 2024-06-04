@@ -40,7 +40,7 @@ func tagsToKey(tags []string) string {
 	return strings.Join(tagsPair, "|")
 }
 
-func analyse(data *bytes.Buffer) ([]*TagsProfile, error) {
+func Analyse(data *bytes.Buffer) ([]*TagsProfile, error) {
 	// parse protobuf data
 	pf, err := profile.ParseData(data.Bytes())
 	if err != nil {
@@ -105,13 +105,14 @@ func handleTaskProfile(profileData *cpuprofile.ProfileData) error {
 	if profileData.Error != nil {
 		return profileData.Error
 	}
-	profiles, err := analyse(profileData.Data)
+	profiles, err := Analyse(profileData.Data)
 	if err != nil {
 		return err
 	}
 	prinfProfilerInfo(profiles)
 	return nil
 }
+
 
 func StartCPUProfile(enableTaskWebVisual bool) {
 	consumer := cpuprofile.NewConsumer(handleTaskProfile)

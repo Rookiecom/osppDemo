@@ -35,7 +35,7 @@ func (pc *Consumer) StartConsume() error {
 	return nil
 }
 
-func (pc *Consumer) stopConsume() {
+func (pc *Consumer) StopConsume() {
 	if !pc.started {
 		return
 	}

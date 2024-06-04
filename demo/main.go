@@ -25,7 +25,7 @@ func init() {
 }
 
 func main() {
-	go cpuprofile.StartCPUProfiler(time.Duration(*window*int(time.Millisecond)), time.Duration(*interval*int(time.Millisecond)))
+	cpuprofile.StartCPUProfiler(time.Duration(*window*int(time.Millisecond)), time.Duration(*interval*int(time.Millisecond)))
 	if enableProfile {
 		task.StartCPUProfile(enableTaskWebVisual)
 	}

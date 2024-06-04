@@ -44,7 +44,7 @@ func (pc *Collector) StopCPUProfile() error {
 	case <-pc.firstRead:
 	case <-time.After((profileWindow + profileInterval) * 2):
 	}
-	pc.consumer.stopConsume()
+	pc.consumer.StopConsume()
 	data, err := pc.buildProfileData()
 	if err != nil || data == nil {
 		return err
