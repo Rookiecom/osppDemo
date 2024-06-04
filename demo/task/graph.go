@@ -25,7 +25,7 @@ func NewMonitor(max int) *Monitor {
 	}
 }
 
-var monitor = NewMonitor(10)
+var monitor = NewMonitor(50)
 
 func (m *Monitor) WriteTo(w io.Writer) {
 	m.Lock.Lock()

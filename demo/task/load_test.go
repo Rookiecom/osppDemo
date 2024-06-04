@@ -75,7 +75,7 @@ func TestLoad(t *testing.T) {
 		}
 		fmt.Printf("任务：%s\n  CPU使用量：%d\n", ParallelConsumer.mergeData[i].Key, ParallelConsumer.mergeData[i].Value)
 	}
-	fmt.Println("N倍负载串行启动测试完成")
+	fmt.Println("N倍负载并行测试完成")
 	// SerialConsumer := testConsumer{}
 	// SerialConsumer.consumer = cpuprofile.NewConsumer(SerialConsumer.testDataHandle)
 	// SerialConsumer.consumer.StartConsume()
